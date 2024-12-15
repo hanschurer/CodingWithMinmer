@@ -71,4 +71,7 @@ void delete_least_parentheses() {
 
     s = "({({([}";
     assert(delete_least_parentheses(s) == "{}");
+
+    s = "([)]";
+    assert(delete_least_parentheses(s) == "([)]");
 }
