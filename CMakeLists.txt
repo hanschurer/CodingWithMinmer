@@ -13,4 +13,7 @@ add_executable(CodingWithMinmer main.cpp
         utils/Node.hpp
         938_range_of_sum_bst/first_variant_average_938.hpp
         938_range_of_sum_bst/original_938.hpp
+        283_move_zeroes/variant_zeroes_to_front_283.hpp
+        283_move_zeroes/variant_zeroes_to_front_283.hpp
+        283_move_zeroes/original_283.hpp
 )
