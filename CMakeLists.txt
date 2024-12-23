@@ -16,4 +16,6 @@ add_executable(CodingWithMinmer main.cpp
         283_move_zeroes/variant_zeroes_to_front_283.hpp
         283_move_zeroes/variant_zeroes_to_front_283.hpp
         283_move_zeroes/original_283.hpp
+        199_binary_tree_right_side_view/original_199.hpp
+        1650_lowest_common_ancestor_3/original_1650.hpp
 )
