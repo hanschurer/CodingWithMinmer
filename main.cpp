@@ -32,5 +32,8 @@ int main(int argc, char *argv[]) {
     else if (!strcmp(argv[1], "1650_lowest_common_ancestor_3")) {
         lowestCommonAncestor_second_variant_1650();
     }
+    else if (!strcmp(argv[1], "528_random_pick_with_weight")) {
+        pickIndex();
+    }
 }
 
