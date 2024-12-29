@@ -35,5 +35,8 @@ int main(int argc, char *argv[]) {
     else if (!strcmp(argv[1], "528_random_pick_with_weight")) {
         pickIndex();
     }
+    else if (!strcmp(argv[1], "88_merge_sorted_array")) {
+        merge_vectors_88();
+    }
 }
 
