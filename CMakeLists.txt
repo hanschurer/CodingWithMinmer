@@ -20,4 +20,8 @@ add_executable(CodingWithMinmer main.cpp
         1650_lowest_common_ancestor_3/original_1650.hpp
         528_random_pick_weight/original_528.hpp
         88_merged_sorted_array/original_88.hpp
+        680_valid_palindrome_2/original_680.hpp
+        215_kth_largest_element/original_215.hpp
+        215_kth_largest_element/variant_kth_smallest_215.hpp
+        560_subarray_sum_equals_k/brute_force_560.hpp
 )

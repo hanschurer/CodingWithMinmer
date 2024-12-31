@@ -10,6 +10,8 @@
 #include "88_merged_sorted_array/variant_without_sizes_88.hpp"
 #include "938_range_of_sum_bst/first_variant_average_938.hpp"
 #include "938_range_of_sum_bst/second_variant_many_invocations_938.hpp"
+#include "1570_dot_product_of_two_sparse_vectors/original_1570.hpp"
+#include "1570_dot_product_of_two_sparse_vectors/variant_binary_search_1570.hpp"
 
 int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "1249_minimum_remove_to_make_valid_parentheses")) {
@@ -37,6 +39,9 @@ int main(int argc, char *argv[]) {
     }
     else if (!strcmp(argv[1], "88_merge_sorted_array")) {
         merge_vectors_88();
+    }
+    else if (!strcmp(argv[1], "1570_dot_product_of_two_sparse_vectors")) {
+        dotProductVariant();
     }
 }
 
