@@ -12,6 +12,8 @@
 #include "938_range_of_sum_bst/second_variant_many_invocations_938.hpp"
 #include "1570_dot_product_of_two_sparse_vectors/original_1570.hpp"
 #include "1570_dot_product_of_two_sparse_vectors/variant_binary_search_1570.hpp"
+#include "1762_buildings_with_an_ocean_view/first_variant_view_count_1762.hpp"
+#include "1762_buildings_with_an_ocean_view/second_variant_ocean_view_both_sides_1762.hpp"
 
 int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "1249_minimum_remove_to_make_valid_parentheses")) {
@@ -42,6 +44,9 @@ int main(int argc, char *argv[]) {
     }
     else if (!strcmp(argv[1], "1570_dot_product_of_two_sparse_vectors")) {
         dotProductVariant();
+    }
+    else if (!strcmp(argv[1], "1762_buildings_with_an_ocean_view")) {
+        findBuildingViewCount_second_variant_1762();
     }
 }
 

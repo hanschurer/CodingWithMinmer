@@ -23,5 +23,7 @@ add_executable(CodingWithMinmer main.cpp
         680_valid_palindrome_2/original_680.hpp
         215_kth_largest_element/original_215.hpp
         215_kth_largest_element/variant_kth_smallest_215.hpp
-        560_subarray_sum_equals_k/brute_force_560.hpp
+        1762_buildings_with_an_ocean_view/original_1762.hpp
+        1762_buildings_with_an_ocean_view/first_variant_view_count_1762.hpp
+        1762_buildings_with_an_ocean_view/second_variant_ocean_view_both_sides_1762.hpp
 )
