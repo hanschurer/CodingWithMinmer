@@ -26,4 +26,6 @@ add_executable(CodingWithMinmer main.cpp
         1762_buildings_with_an_ocean_view/original_1762.hpp
         1762_buildings_with_an_ocean_view/first_variant_view_count_1762.hpp
         1762_buildings_with_an_ocean_view/second_variant_ocean_view_both_sides_1762.hpp
+        125_valid_palindrome/original_125.hpp
+        125_valid_palindrome/variant_125.hpp
 )

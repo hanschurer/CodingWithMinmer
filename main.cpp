@@ -1,6 +1,7 @@
 #include "1249_minimum_remove_to_make_valid_parentheses/mock_interview_1249.hpp"
 #include "1249_minimum_remove_to_make_valid_parentheses/first_variant_in_place_1249.hpp"
 #include "1249_minimum_remove_to_make_valid_parentheses/original_1249.hpp"
+#include "125_valid_palindrome/variant_125.hpp"
 #include "1650_lowest_common_ancestor_3/second_variant_input_vector_1650.hpp"
 #include "199_binary_tree_right_side_view/first_variant_left_right_side_views_199.hpp"
 #include "199_binary_tree_right_side_view/second_variant_print_left_right_side_views_199.hpp"
@@ -47,6 +48,9 @@ int main(int argc, char *argv[]) {
     }
     else if (!strcmp(argv[1], "1762_buildings_with_an_ocean_view")) {
         findBuildingViewCount_second_variant_1762();
+    }
+    else if (!strcmp(argv[1], "125_valid_palindrome")) {
+        isPalindrome_variant_125();
     }
 }
 
