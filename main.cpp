@@ -15,6 +15,7 @@
 #include "1570_dot_product_of_two_sparse_vectors/variant_binary_search_1570.hpp"
 #include "1762_buildings_with_an_ocean_view/first_variant_view_count_1762.hpp"
 #include "1762_buildings_with_an_ocean_view/second_variant_ocean_view_both_sides_1762.hpp"
+#include "346_moving_average_from_data_stream/variant_sliding_window_346.hpp"
 
 int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "1249_minimum_remove_to_make_valid_parentheses")) {
@@ -51,6 +52,9 @@ int main(int argc, char *argv[]) {
     }
     else if (!strcmp(argv[1], "125_valid_palindrome")) {
         isPalindrome_variant_125();
+    }
+    else if (!strcmp(argv[1], "346_moving_average_from_data_stream")) {
+        compute_running_sum_variant_346();
     }
 }
 
