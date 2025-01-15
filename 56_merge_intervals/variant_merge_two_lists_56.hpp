@@ -55,4 +55,14 @@ void merge_2_interval_lists_56_variant() {
     B = {{6, 10}, {16, 20}};
     expected = {{1, 5}, {6, 10}, {11, 15}, {16, 20}, {21, 25}};
     assert(expected == merge_2_interval_lists_56_variant(A, B));
+
+    A = {{1, 5}};
+    B = {{1, 5}};
+    expected = {{1, 5}};
+    assert(expected == merge_2_interval_lists_56_variant(A, B));
+
+    A = {{1, 5}, {10, 15}, {20, 25}};
+    B = {{2, 3}, {4, 5}, {12, 13}, {20, 27}};
+    expected = {{1, 5}, {10, 15}, {20, 27}};
+    assert(expected == merge_2_interval_lists_56_variant(A, B));
 }

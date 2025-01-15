@@ -18,6 +18,8 @@
 #include "346_moving_average_from_data_stream/variant_sliding_window_346.hpp"
 #include "1004_max_consecutive_ones_3/first_variant_1004.hpp"
 #include "1004_max_consecutive_ones_3/second_variant_1004.hpp"
+#include "162_find_peak_element/variant_find_valley_element_162.hpp"
+#include "56_merge_intervals/variant_merge_two_lists_56.hpp"
 
 int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "1249_minimum_remove_to_make_valid_parentheses")) {
@@ -61,5 +63,10 @@ int main(int argc, char *argv[]) {
     else if (!strcmp(argv[1], "1004_max_consecutive_ones_3")) {
         longestVacationTimeSecondVariant();
     }
+    else if (!strcmp(argv[1], "56_merge_intervals")) {
+        merge_2_interval_lists_56_variant();
+    }
+    else if (!strcmp(argv[1], "162_find_peak_element")) {
+        FindValleyElement();
+    }
 }
-

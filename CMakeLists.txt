@@ -28,4 +28,8 @@ add_executable(CodingWithMinmer main.cpp
         1762_buildings_with_an_ocean_view/second_variant_ocean_view_both_sides_1762.hpp
         125_valid_palindrome/original_125.hpp
         125_valid_palindrome/variant_125.hpp
+        56_merge_intervals/original_56.hpp
+        56_merge_intervals/variant_merge_two_lists_56.hpp
+        162_find_peak_element/variant_find_valley_element_162.hpp
+        162_find_peak_element/original_162.hpp
 )
