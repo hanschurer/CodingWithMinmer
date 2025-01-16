@@ -32,4 +32,5 @@ add_executable(CodingWithMinmer main.cpp
         56_merge_intervals/variant_merge_two_lists_56.hpp
         162_find_peak_element/variant_find_valley_element_162.hpp
         162_find_peak_element/original_162.hpp
+        1047_remove_all_adjacent_duplicates_in_string/variant_remove_all_1047.hpp
 )
