@@ -20,6 +20,7 @@
 #include "1004_max_consecutive_ones_3/second_variant_1004.hpp"
 #include "1047_remove_all_adjacent_duplicates_in_string/variant_remove_all_1047.hpp"
 #include "1047_remove_all_adjacent_duplicates_in_string/original_1047.hpp"
+#include "121_best_time_to_buy_and_sell_stock/variant_121.hpp"
 #include "162_find_peak_element/variant_find_valley_element_162.hpp"
 #include "56_merge_intervals/variant_merge_two_lists_56.hpp"
 int main(int argc, char *argv[]) {
@@ -72,5 +73,8 @@ int main(int argc, char *argv[]) {
     }
     else if (!strcmp(argv[1], "1047_remove_all_adjacent_duplicates")) {
         remove_all_adjacent_duplicates_variant_1047();
+    }
+    else if (!strcmp(argv[1], "121_best_time_to_buy_and_sell_stock")) {
+        FindCheapestTickets();
     }
 }
