@@ -9,8 +9,7 @@ int maxProfit_121(std::vector<int>& prices) {
         max_profit =
             std::max(max_profit, prices[i] - min_buying_price);
 
-        if (prices[i] < min_buying_price)
-            min_buying_price = prices[i];
+        min_buying_price = std::min(min_buying_price, prices[i]);
     }
 
     return max_profit;

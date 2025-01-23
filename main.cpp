@@ -23,6 +23,9 @@
 #include "121_best_time_to_buy_and_sell_stock/variant_121.hpp"
 #include "162_find_peak_element/variant_find_valley_element_162.hpp"
 #include "56_merge_intervals/variant_merge_two_lists_56.hpp"
+#include "21_merge_two_sorted_lists/first_variant_21.hpp"
+#include "21_merge_two_sorted_lists/second_variant_21.hpp"
+
 int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "1249_minimum_remove_to_make_valid_parentheses")) {
         delete_least_parentheses();
@@ -76,5 +79,8 @@ int main(int argc, char *argv[]) {
     }
     else if (!strcmp(argv[1], "121_best_time_to_buy_and_sell_stock")) {
         FindCheapestTickets();
+    }
+    else if (!strcmp(argv[1], "21_merge_2_sorted_lists")) {
+        merge_3_sorted_lists_first_variant_21();
     }
 }

@@ -8,11 +8,11 @@ int FindCheapestTickets(std::vector<int>& departures,
     int min_departure_cost = departures[0];
     int min_cost = INT_MAX;
     for (int i = 1; i < departures.size(); i++) {
-        min_cost = std::min(min_cost, min_departure_cost + returns[i]);
+        min_cost = std::min(min_cost, returns[i] + min_departure_cost);
 
-        if (departures[i] < min_departure_cost)
-            min_departure_cost = departures[i];
+        min_departure_cost = std::min(min_departure_cost, departures[i]);
     }
+
     return min_cost;
 }
 
