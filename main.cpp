@@ -25,6 +25,8 @@
 #include "56_merge_intervals/variant_merge_two_lists_56.hpp"
 #include "21_merge_two_sorted_lists/first_variant_21.hpp"
 #include "21_merge_two_sorted_lists/second_variant_21.hpp"
+#include "129_sum_root_to_leaf_nodes/second_variant_129.hpp"
+#include "129_sum_root_to_leaf_nodes/first_variant_129.hpp"
 
 int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "1249_minimum_remove_to_make_valid_parentheses")) {
@@ -82,5 +84,8 @@ int main(int argc, char *argv[]) {
     }
     else if (!strcmp(argv[1], "21_merge_2_sorted_lists")) {
         merge_3_sorted_lists_first_variant_21();
+    }
+    else if (!strcmp(argv[1], "129_sum_root_to_leaf_numbers")) {
+        sumNumbers_second_variant_129();
     }
 }
