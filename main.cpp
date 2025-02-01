@@ -31,6 +31,7 @@
 #include "65_valid_number/variant_65.hpp"
 #include "921_minimum_add_to_make_parentheses_valid/variant_921.hpp"
 #include "1_two_sum/second_variant_1.hpp"
+#include "1_two_sum/first_variant_1.hpp"
 
 int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "1249_minimum_remove_to_make_valid_parentheses")) {
@@ -99,6 +100,6 @@ int main(int argc, char *argv[]) {
         minAddToMakeValid_variant();
     }
     else if (!strcmp(argv[1], "1_two_sum")) {
-        second_variant_two_sum_1();
+        twoSum_first_variant();
     }
 }

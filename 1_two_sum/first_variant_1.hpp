@@ -40,4 +40,8 @@ void twoSum_first_variant() {
     nums = {};
     target = 0;
     assert(false == twoSum_first_variant(nums, target));
+
+    nums = {1, 1, 1, 1, 1, 1, 1};
+    target = 2;
+    assert(true == twoSum_first_variant(nums, target));
 }

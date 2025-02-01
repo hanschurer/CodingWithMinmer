@@ -61,4 +61,7 @@ void remove_all_adjacent_duplicates_variant_1047() {
 
     s = "aabccddeeffbbbbbbbbbf";
     assert("f" == remove_all_adjacent_duplicates_variant_1047(s));
+
+    s = "abbbacca"; // Cannot pick and choose duplicates in the middle to delete first
+    assert("a" == remove_all_adjacent_duplicates_variant_1047(s));
 }
