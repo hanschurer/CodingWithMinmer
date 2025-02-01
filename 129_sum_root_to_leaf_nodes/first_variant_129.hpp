@@ -10,7 +10,7 @@ void sumNumbers_first_variant_129(Node* root, int& total_sum, int curr_sum)
     if (root == nullptr)
             return;
 
-    int places = 1;
+    int places = root->val == 0 ? 10 : 1; // This is a new line not from the video to capture an edgecase of node values of 0
     int node_val = root->val;
     while (node_val > 0) {
         node_val /= 10;
@@ -63,6 +63,11 @@ void sumNumbers_first_variant_129() {
     root->left = new Node(200);
     root->right = new Node(3000);
     assert(10200 + 103000 == sumNumbers_first_variant_129(root));
+
+    root = new Node(10);
+    root->left = new Node(0);
+    root->right = new Node(0);
+    assert(200 == sumNumbers_first_variant_129(root));
 
     root = nullptr;
     assert(0 == sumNumbers_first_variant_129(root));
