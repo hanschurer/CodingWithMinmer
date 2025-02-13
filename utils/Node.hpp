@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 class Node {
 public:
     int val;
@@ -7,6 +9,8 @@ public:
     Node* right;
     Node* next;
     Node* parent;
+    Node* random;
+    std::vector<Node*> children;
 
     Node() : val(0), left(nullptr), right(nullptr), next(nullptr), parent(nullptr) {}
 
