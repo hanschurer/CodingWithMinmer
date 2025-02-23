@@ -38,3 +38,11 @@ std::string minRemoveToMakeValid_Variant(std::string s) {
 
     return s.substr(0, j);
 }
+
+void minRemoveToMakeValid_Variant() {
+    std::string s = "))((ab()c)(";
+    assert(minRemoveToMakeValid_Variant(s) == "((ab)c)");
+
+    s = "((ab((()))c)(";
+    assert(minRemoveToMakeValid_Variant(s) == "((ab(()))c)");
+}

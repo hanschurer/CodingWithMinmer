@@ -74,4 +74,10 @@ void delete_least_parentheses() {
 
     s = "([)]";
     assert(delete_least_parentheses(s) == "([)]");
+
+    s = "))((ab()c)(";
+    assert(delete_least_parentheses(s) == "((ab)c)");
+
+    s = "((ab((()))c)(";
+    assert(delete_least_parentheses(s) == "((ab(()))c)");
 }
