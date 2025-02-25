@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <assert.h>
 
+// SECOND VARIANT: What if you had to return the number of dominoe pairs that add up to a target?
 int second_variant_two_sum_1(std::vector<std::pair<int, int>>& dominoes, int target) {
     std::unordered_map<int, int> domino_to_freq;
     int result = 0;

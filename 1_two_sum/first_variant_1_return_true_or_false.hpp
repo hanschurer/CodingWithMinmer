@@ -1,8 +1,10 @@
 #pragma once
 
+#include <cassert>
 #include <vector>
 #include <unordered_set>
 
+// VARIANT: What if you had to return T/F if you find at least one pair of numbers that add up to the target?
 bool twoSum_first_variant(std::vector<int>& nums, int target) {
     std::unordered_set<int> complements;
     for (auto num : nums) {

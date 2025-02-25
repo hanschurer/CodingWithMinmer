@@ -30,12 +30,12 @@
 #include "65_valid_number/original_65.hpp"
 #include "65_valid_number/variant_65.hpp"
 #include "921_minimum_add_to_make_parentheses_valid/variant_921.hpp"
-#include "1_two_sum/second_variant_1.hpp"
-#include "1_two_sum/first_variant_1.hpp"
+#include "1_two_sum/second_variant_1_flip_dominoes.hpp"
+#include "1_two_sum/first_variant_1_return_true_or_false.hpp"
 
 int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "1249_minimum_remove_to_make_valid_parentheses")) {
-        delete_least_parentheses();
+        minRemoveToMakeValid_Variant();
     }
     else if (!strcmp(argv[1], "71_simplify_path")) {
         change_directory();
