@@ -3,6 +3,7 @@
 #include <cassert>
 #include <vector>
 
+// VARIANT: What if you had to merge two interval lists instead of one?
 void try_merge(std::vector<std::vector<int>>& result,
                 std::vector<int>& curr_interval) {
     if (result.empty() || curr_interval[0] > result.back()[1])

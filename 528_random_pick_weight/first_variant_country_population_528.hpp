@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+// VARIANT: What if you had to return the city that a person lives in? The input is given very differently.
 class Solution_variant_528 {
     std::vector<std::pair<std::string, int>> prefix_sums;
 public:

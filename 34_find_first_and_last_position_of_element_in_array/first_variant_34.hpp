@@ -2,6 +2,7 @@
 
 #include <vector>
 
+// VARIANT: What if you had to return the number of occurrences of a target number?
 int searchRange_first_variant_34(std::vector<int>& nums, int target) {
     if (nums.empty())
         return 0;

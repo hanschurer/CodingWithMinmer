@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 
+// VARIANT: What if you had to abide by 3 formatting requirements when capturing missing ranges?
 std::vector<std::string> findMissingRanges_variant_163(std::vector<int>& nums,
                                         int lower,
                                         int upper) {

@@ -2,6 +2,8 @@
 
 #include <vector>
 
+// VARIANT: What if you had to return the number of unique elements in an integer array?
+// Note this must be done in K LOG N time complexity (unless the input has all unique integers)
 int countUniqueElements_second_variant_34(std::vector<int>& nums) {
     int count = 0;
     int i = 0;

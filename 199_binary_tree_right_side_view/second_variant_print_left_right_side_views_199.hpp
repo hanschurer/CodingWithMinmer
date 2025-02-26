@@ -5,6 +5,7 @@
 #include <queue>
 #include "../utils/Node.hpp"
 
+// VARIANT: What if you had to print to console the left and right side views?
 void print_left_right_side_views(Node* root) {
     if (root == nullptr)
         return;

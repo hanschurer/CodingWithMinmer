@@ -6,6 +6,7 @@
 #include <queue>
 #include "../utils/Node.hpp"
 
+// VARIANT: What if you had to return both the left- and right side views of a binary tree?
 std::vector<int> get_left_right_side_views(Node* root) {
     if (root == nullptr)
         return {};

@@ -5,6 +5,7 @@
 #include "../utils/Node.hpp"
 #include <vector>
 
+// VARIANT: What if you were given all the nodes as a part of a vector, and no longer the root node?
 Node* lowestCommonAncestor_second_variant_1650(std::vector<Node*>& nodes,
     Node* p_start,
     Node* q_start) {

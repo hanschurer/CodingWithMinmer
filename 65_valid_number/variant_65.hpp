@@ -2,6 +2,7 @@
 
 #include <string>
 
+// VARIANT: What if you didn't have to implement exponents?
 bool isNumber_variant_65(std::string s) {
     bool seen_dot = false;
     bool seen_digit = false;

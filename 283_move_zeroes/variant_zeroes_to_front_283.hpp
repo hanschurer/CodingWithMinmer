@@ -3,6 +3,7 @@
 #include <cassert>
 #include <vector>
 
+// VARIANT: What if you had to move zeroes to the front, not the back?
 void move_zeroes_to_front(std::vector<int>& nums) {
     int swap_index = nums.size() - 1;
     for (int i = nums.size() - 1; i >= 0; i--) {

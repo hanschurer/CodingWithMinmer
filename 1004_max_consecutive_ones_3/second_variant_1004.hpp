@@ -2,6 +2,9 @@
 
 #include <vector>
 
+// VARIANT: What if Meta presents the OG problem in the context of PTO days you want to take off?
+// Specifically, you're given a vector of booleans where T means it's a weekend, and F means
+// it's a week day.
 int longestVacationTimeSecondVariant(std::vector<bool>& year, int pto) {
     int max_vacation = 0;
     int left = 0;

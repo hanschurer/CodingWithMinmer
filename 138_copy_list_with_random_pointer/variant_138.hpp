@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include "../utils/Node.hpp"
 
+// VARIANT: What if you had to deep copy a binary tree, not a linked list?
 Node* deepCopy(Node* node, std::unordered_map<Node*, Node*>& old_to_new) {
     if (node == nullptr)
         return nullptr;

@@ -4,6 +4,7 @@
 #include <vector>
 #include <queue>
 
+// VARIANT: What if you had to find the Kth smallest number in an integer array?
 int findKthSmallest_215(std::vector<int>& nums, int k) {
     std::priority_queue<int> max_heap;
     for (auto num : nums) {

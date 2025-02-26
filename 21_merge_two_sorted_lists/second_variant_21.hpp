@@ -3,6 +3,7 @@
 #include <vector>
 #include <cassert>
 
+// VARIANT: What if you had to merge 3 sorted integer lists into a resulting list without duplicates?
 std::vector<int> merge_3_sorted_lists_second_variant_21(std::vector<int>& listA,
                                 std::vector<int>& listB,
                                 std::vector<int>& listC) {

@@ -3,6 +3,8 @@
 #include <cassert>
 #include <vector>
 
+// VARIANT: What if you had to optimize the space complexity in the case you're only given
+// positive integers in the array?
 bool subarraySum_second_variant_560(std::vector<int>& nums, int k) {
     int left = 0;
     int sum = 0;

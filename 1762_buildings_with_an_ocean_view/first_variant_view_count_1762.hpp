@@ -3,6 +3,7 @@
 #include <cassert>
 #include <vector>
 
+// VARIANT: What if you had to return the number of buildings with an ocean view?
 int findBuildingViewCount_variant_1762(std::vector<int>& heights) {
     int n = heights.size();
     int count = 1;

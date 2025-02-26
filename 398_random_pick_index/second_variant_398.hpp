@@ -2,6 +2,7 @@
 
 #include <vector>
 
+// VARIANT: What if you had to use reservoir sampling to pick an index of the maximum value in the array?
 int randomPickIndex_second_variant_398(std::vector<int>& nums)
 {
     int max_number = INT_MIN;

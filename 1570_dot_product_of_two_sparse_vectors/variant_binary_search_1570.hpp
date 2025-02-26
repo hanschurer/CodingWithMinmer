@@ -2,6 +2,7 @@
 
 #include <vector>
 
+// VARIANT: What if you had to optimize your algorithm using binary search?
 class SparseVectorVariant {
 public:
     std::vector<std::pair<int, int>> index_to_num;

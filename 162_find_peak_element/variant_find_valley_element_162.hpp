@@ -3,6 +3,7 @@
 #include <cassert>
 #include <vector>
 
+// VARIANT: What if you had to find the valley element, no longer a peak element?
 int FindValleyElement(std::vector<int>& nums) {
     int left = 0;
     int right = nums.size() - 1;

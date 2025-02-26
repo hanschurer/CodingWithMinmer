@@ -3,6 +3,7 @@
 #include <vector>
 #include <cassert>
 
+// VARIANT: What if you had to merge 3 sorted integer lists? Duplicates in the merged list is allowed.
 std::vector<int> merge_3_sorted_lists_first_variant_21(std::vector<int>& listA,
                                 std::vector<int>& listB,
                                 std::vector<int>& listC) {

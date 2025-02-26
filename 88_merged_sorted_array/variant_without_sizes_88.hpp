@@ -3,6 +3,8 @@
 #include <cassert>
 #include <vector>
 
+// VARIANT: What if the sizes - m and n - weren't given? Instead, we're guaranteed
+// that one list is double in size of the other. Merge them like you would in the original problem.
 void merge_vectors_88(std::vector<int>& list_a, std::vector<int>& list_b) {
     int a = list_a.size() / 2 - 1;
     int b = list_b.size() - 1;

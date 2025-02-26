@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <iostream>
 
+// VARIANT: What if you had to return the parentheses string itself after the minimum adds?
 std::string minAddToMakeValid_variant(std::string s) {
     std::string result;
     int extra_open_parentheses = 0;

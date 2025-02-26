@@ -5,6 +5,7 @@
 #include <cassert>
 #include <iostream>
 
+// VARIANT: What if you nodes could be larger than 9?
 void sumNumbers_first_variant_129(Node* root, int& total_sum, int curr_sum)
 {
     if (root == nullptr)

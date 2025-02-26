@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+// VARIANT: What if you had to remove all adjacent duplicates as you iterate
+// left-to-right?
 struct letter {
     char val;
     int freq;

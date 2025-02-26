@@ -3,6 +3,8 @@
 #include <cassert>
 #include <vector>
 
+// VARIANT: What if you had to return all of the buildings that either have an ocean view
+// to its left and/or its right? This becomes very similar to Leetcode 42 Trapping Rain Water
 std::vector<int> findBuildingViewCount_second_variant_1762(std::vector<int>& heights) {
     int n = heights.size();
     if (n == 1)

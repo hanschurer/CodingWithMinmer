@@ -3,6 +3,7 @@
 #include <cassert>
 #include <queue>
 
+// VARIANT: What if you had to return a resulting array of the averages of each subarray of size, "size"?
 std::vector<int> compute_running_sum_variant_346(std::vector<int>& nums, int size)
 {
     std::vector<int> result;

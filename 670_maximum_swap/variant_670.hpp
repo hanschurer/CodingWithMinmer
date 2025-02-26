@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+// VARIANT: What if you had to build the second largest number?
 std::vector<int> get_second_largest_number_670(std::vector<int>& num) {
     if (num.empty() || num.size() == 1)
         return {};

@@ -4,6 +4,8 @@
 #include <vector>
 #include "../utils/Node.hpp"
 
+// VARIANT: What if you had to optimize your solution for 10^4 function invocations?
+// How would your algorithm change?
 class RangeSumCalculator
 {
     std::vector<int> vals;

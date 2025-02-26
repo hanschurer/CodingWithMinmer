@@ -3,6 +3,8 @@
 #include <cassert>
 #include <vector>
 
+// VARIANT: What if you had to return the minimum cost to buy a roundtrip flight?
+// Note you cannot fly somewhere and back on the same day.
 int FindCheapestTickets(std::vector<int>& departures,
                         std::vector<int>& returns) {
     int min_departure_cost = departures[0];

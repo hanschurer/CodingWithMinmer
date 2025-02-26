@@ -2,6 +2,7 @@
 
 #include <string>
 
+// VARIANT: What if you had to solve the OG problem without any extra space complexity?
 std::string minRemoveToMakeValid_Variant(std::string s) {
     int extra_opens = 0;
     int total_opens = 0;

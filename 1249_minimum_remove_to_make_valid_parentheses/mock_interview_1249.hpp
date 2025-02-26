@@ -5,6 +5,10 @@
 #include <unordered_map>
 #include <iostream>
 
+// VARIANT: What if you were given different types of parentheses?
+// Each type of parenthesis is balanced independently of the others.
+// Otherwise, this might explode into a DP problem and Meta swear to never ask 
+// Dynamic programming. They'd never lie, right?
 std::string delete_least_parentheses(std::string& s) {
     std::unordered_map<char, char> mapping = {
         {')', '('},

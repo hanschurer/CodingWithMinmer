@@ -5,6 +5,9 @@
 #include <cassert>
 #include <iostream>
 
+// VARIANT: What if you had to ignore negative signs in your calculations until
+// you reached a leaf node, and instead, only consider signage if a root-to-leaf path is
+// a "negative path"?
 void sumNumbers_second_variant_129(Node* root, 
                            int& total_sum, 
                            int curr_sum, 

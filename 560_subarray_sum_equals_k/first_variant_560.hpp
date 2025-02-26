@@ -3,6 +3,8 @@
 #include <vector>
 #include <unordered_set>
 
+// VARIANT: What if you had to return true or false if there exists at least one
+// subarray that equals K?
 bool subarraySum_first_variant_560(std::vector<int>& nums, int k) {
     int curr_prefix_sum = 0;
     std::unordered_set<int> prefix_sums;

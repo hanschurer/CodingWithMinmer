@@ -2,7 +2,7 @@
 
 #include "../utils/Node.hpp"
 
-
+// VARIANT: What if you had to find the diameter of an N-ary tree?
 int diameterOfNAryTree(Node* node, int& diameter) {
     if (node == nullptr)
         return 0;

@@ -5,6 +5,9 @@
 #include <sstream>
 #include <stack>
 
+// VARIANT: What if you were given a new "cd" parameter to change where you currently
+// were on your filesystem (represented by "cwd")? If "cd" starts with "/" then this has
+// many implications on the code.
 std::string change_directory(std::string cwd, std::string cd) {
     if (cd.empty())
         return cwd;

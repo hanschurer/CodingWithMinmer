@@ -4,6 +4,8 @@
 #include <string>
 #include <unordered_set>
 
+// VARIANT: What if you could only consider a limited set of characters as a part of
+// a potential palindrome?
 bool isPalindrome_variant_125(std::string& s, std::vector<char>& include) {
     std::unordered_set<char> included_set(include.begin(), include.end());
     int left = 0;
