@@ -26,3 +26,25 @@ void prevPermutation_31(std::vector<int>& nums) {
     std::swap(nums[peak], nums[next_lower]);
     std::reverse(nums.begin() + peak + 1, nums.end());
 }
+
+void prevPermutation_31() {
+    std::vector<int> nums = {3, 2, 1};
+    std::vector<int> expected = {3, 1, 2};
+    prevPermutation_31(nums);
+    assert(expected == nums);
+
+    nums = {1, 2, 3};
+    expected = {3, 2, 1};
+    prevPermutation_31(nums);
+    assert(expected == nums);
+
+    nums = {9, 6, 5, 4, 3, 2};
+    expected = {9, 6, 5, 4, 2, 3};
+    prevPermutation_31(nums);
+    assert(expected == nums);
+
+    nums = {4, 5, 1, 1, 3, 7};
+    expected = {4, 3, 7, 5, 1, 1};
+    prevPermutation_31(nums);
+    assert(expected == nums);
+}
