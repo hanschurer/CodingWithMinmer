@@ -1,0 +1,22 @@
+#include <gtest/gtest.h>
+
+#include "215_kth_largest_element_tests.cpp"
+#include "560_subarray_sum_equals_k_tests.cpp"
+#include "34_find_first_and_last_position_of_element_in_array.cpp"
+#include "791_custom_sort_string.cpp"
+#include "163_missing_ranges.cpp"
+#include "398_random_pick_index_tests.cpp"
+#include "670_maximum_swap_tests.cpp"
+#include "721_accounts_merge_tests.cpp"
+#include "236_lowest_common_ancestor_tests.cpp"
+#include "31_next_permutation_tests.cpp"
+#include "415_add_strings_tests.cpp"
+#include "15_3_sum_tests.cpp"
+#include "1424_diagonal_traversal_tests.cpp"
+#include "408_valid_word_abbreviation_tests.cpp"
+
+int main(int argc, char **argv)
+{
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
