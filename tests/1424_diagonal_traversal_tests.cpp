@@ -78,7 +78,7 @@ TEST(DiagonalTraverse2_FirstVariant_AntiDiagonal, SingleColumn) {
     EXPECT_EQ(expected, findAntiDiagonalOrder_1424_first_variant(nums));
 }
 
-TEST(DiagonalTraverse2_SecondVariant_PrintAntiDiagonal, SingleRow) {
+TEST(DiagonalTraverse2_FirstVariant_PrintAntiDiagonal, SingleRow) {
     std::vector<std::vector<int>> nums = {
         {1, 2, 3, 4, 5, 6}
     };
