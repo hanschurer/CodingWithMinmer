@@ -28,9 +28,6 @@ if __name__ == "__main__":
     nums = [1, 2, 3, 4, 3, 2]
     assert findValleyElement(nums) == 0
 
-    nums = [1, 2, 3, 4, 3, 2]
-    assert findValleyElement(nums) == 0
-
     nums = [1, 2, 3, 2, 1, 0]
     assert findValleyElement(nums) == 5  # Right pos infinity yields valley
 
