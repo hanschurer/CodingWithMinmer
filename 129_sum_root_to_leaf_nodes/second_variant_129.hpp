@@ -13,7 +13,7 @@ void sumNumbers_second_variant_129(Node* root,
                            int curr_sum, 
                            int num_negatives) {
     if (root == nullptr)
-            return;
+        return;
 
     curr_sum = (curr_sum * 10) + std::abs(root->val);
     if (root->val < 0)

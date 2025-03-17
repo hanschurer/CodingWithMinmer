@@ -9,7 +9,7 @@
 void sumNumbers_first_variant_129(Node* root, int& total_sum, int curr_sum)
 {
     if (root == nullptr)
-            return;
+        return;
 
     int places = root->val == 0 ? 10 : 1; // This is a new line not from the video to capture an edgecase of node values of 0
     int node_val = root->val;

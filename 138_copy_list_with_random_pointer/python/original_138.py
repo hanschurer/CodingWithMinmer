@@ -1,14 +1,12 @@
 from typing import Optional
 
-
-class Node:
-    def __init__(self, x: int, next: "Node" = None, random: "Node" = None):
-        self.val = int(x)
-        self.next = next
-        self.random = random
-
-
 class Solution:
+    class Node:
+        def __init__(self, x: int, next: "Node" = None, random: "Node" = None):
+            self.val = int(x)
+            self.next = next
+            self.random = random
+
     def copyRandomList(self, head: "Optional[Node]") -> "Optional[Node]":
         visited = {}
 
