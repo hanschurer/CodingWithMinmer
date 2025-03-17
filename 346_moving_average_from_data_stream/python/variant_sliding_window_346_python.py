@@ -32,8 +32,8 @@ if __name__ == '__main__':
     assert compute_running_sum_variant_346(nums, size) == [3, 5, 7, 9, 11]
 
     nums = [2, 4, 6, 8, 10, 12]
-    size = 2
-    assert compute_running_sum_variant_346(nums, size) == [3, 5, 7, 9, 11]
+    size = 6
+    assert compute_running_sum_variant_346(nums, size) == [(2+4+6+8+10+12)/size]
 
     nums = [1, 2, 3, 4, 5]
     size = 4

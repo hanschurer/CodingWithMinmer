@@ -2,7 +2,7 @@
 #include "../215_kth_largest_element/second_variant_kth_smallest_215.hpp"
 #include "../215_kth_largest_element/first_variant_kth_largest_215.hpp"
 
-TEST(findKthSmallest_FirstVariant, DistinctElements) {
+TEST(findKthSmallest_SecondVariant, DistinctElements) {
     std::vector<int> nums = {3, 8, 4, 1, 10};
     int k = 1;
     EXPECT_EQ(1, findKthSmallest_215(nums, k));
@@ -15,7 +15,7 @@ TEST(findKthSmallest_FirstVariant, DistinctElements) {
     k = 5;
     EXPECT_EQ(10, findKthSmallest_215(nums, k));
 }
-TEST(findKthSmallest_FirstVariant, DuplicateElements) {
+TEST(findKthSmallest_SecondVariant, DuplicateElements) {
     std::vector<int> nums = {1, 1, 1, 1, 2};
     int k = 1;
     EXPECT_EQ(1, findKthSmallest_215(nums, k));
@@ -28,7 +28,7 @@ TEST(findKthSmallest_FirstVariant, DuplicateElements) {
     k = 5;
     EXPECT_EQ(2, findKthSmallest_215(nums, k));
 }
-TEST(findKthSmallest_FirstVariant, NegativeElements) {
+TEST(findKthSmallest_SecondVariant, NegativeElements) {
     std::vector<int> nums = {-1, -5, -2, -3, -4};
     int k = 1;
     EXPECT_EQ(-5, findKthSmallest_215(nums, k));
@@ -42,7 +42,7 @@ TEST(findKthSmallest_FirstVariant, NegativeElements) {
     EXPECT_EQ(-1, findKthSmallest_215(nums, k));
 }
 
-TEST(findKthPlusOne_SecondVariant_LargestVariant, DistinctElements) {
+TEST(findKthPlusOne_FirstVariant_LargestVariant, DistinctElements) {
     std::vector<int> nums = {1, 2, 3, 4, 5};
     int k = 0;
     EXPECT_EQ(5, findKthLargest_first_variant_215(nums, k));
@@ -59,7 +59,7 @@ TEST(findKthPlusOne_SecondVariant_LargestVariant, DistinctElements) {
     k = 0;
     EXPECT_EQ(1, findKthLargest_first_variant_215(nums, k));
 }
-TEST(findKthPlusOne_SecondVariant_LargestVariant, OutOfRange) {
+TEST(findKthPlusOne_FirstVariant_LargestVariant, OutOfRange) {
     std::vector<int> nums = {1, 2, 3, 4, 5};
     EXPECT_THROW(findKthLargest_first_variant_215(nums, 5), std::out_of_range);
     EXPECT_THROW(findKthLargest_first_variant_215(nums, 50), std::out_of_range);
