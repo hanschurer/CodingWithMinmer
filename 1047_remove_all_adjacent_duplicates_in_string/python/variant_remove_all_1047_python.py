@@ -46,3 +46,6 @@ if __name__ == '__main__':
 
     s = "aabccddeeffbbbbbbbbbf"
     assert remove_all_adjacent_duplicates_variant_1047_python(s) == "f"
+
+    s = "abbbacca"; # Cannot pick and choose duplicates in the middle to delete first
+    assert remove_all_adjacent_duplicates_variant_1047_python(s) == "a"

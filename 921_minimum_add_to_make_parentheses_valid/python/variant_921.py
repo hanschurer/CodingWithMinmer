@@ -20,3 +20,11 @@ if __name__ == "__main__":
     solution = Solution()
     assert solution.minimumAddToMakeValid("(())((") == "(())(())"
     assert solution.minimumAddToMakeValid("))(") == "()()()"
+    assert solution.minimumAddToMakeValid(")))") == "()()()"
+    assert solution.minimumAddToMakeValid("(((") == "((()))"
+    assert solution.minimumAddToMakeValid("") == ""
+    assert solution.minimumAddToMakeValid("(())") == "(())"
+    assert solution.minimumAddToMakeValid(")))(((") == "()()()((()))"
+    assert solution.minimumAddToMakeValid("abcxyz") == "abcxyz"
+    assert solution.minimumAddToMakeValid("(()()))((") == "(()())()(())"
+    assert solution.minimumAddToMakeValid("((a)()))((xyz") == "((a)())()((xyz))"
