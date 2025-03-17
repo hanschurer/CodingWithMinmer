@@ -1,8 +1,5 @@
 class Solution:
     def nextPermutation(self, nums: list[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
         valley = None
         for i in range(len(nums) - 1, 0, -1):
             # Iterate from end
