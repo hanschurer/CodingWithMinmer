@@ -15,6 +15,7 @@
 #include "1424_diagonal_traversal_tests.cpp"
 #include "408_valid_word_abbreviation_tests.cpp"
 #include "133_clone_graph_tests.cpp"
+#include "23_merge_k_sorted_lists_tests.cpp"
 
 int main(int argc, char **argv)
 {
