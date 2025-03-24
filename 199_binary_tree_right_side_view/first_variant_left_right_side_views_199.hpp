@@ -63,6 +63,11 @@ void get_left_right_side_views() {
     expected = {3, 2, 1, 2, 3};
     assert(expected == get_left_right_side_views(root));
 
+    root = new Node(1);
+    root->left = new Node(2);
+    expected = {2, 1, 2};
+    assert(expected == get_left_right_side_views(root));
+
     root = nullptr;
     assert(get_left_right_side_views(root).empty());
 
