@@ -16,6 +16,7 @@
 #include "408_valid_word_abbreviation_tests.cpp"
 #include "133_clone_graph_tests.cpp"
 #include "23_merge_k_sorted_lists_tests.cpp"
+#include "987_vertical_order_traversal_of_binary_tree_tests.cpp"
 
 int main(int argc, char **argv)
 {
