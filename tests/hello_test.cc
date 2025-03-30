@@ -18,6 +18,8 @@
 #include "23_merge_k_sorted_lists_tests.cpp"
 #include "987_vertical_order_traversal_of_binary_tree_tests.cpp"
 #include "270_closest_binary_search_tree_value_tests.cpp"
+#include "489_robot_room_cleaner_tests.cpp"
+#include "227_basic_calculator_2_tests.cpp"
 
 int main(int argc, char **argv)
 {
