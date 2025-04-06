@@ -20,6 +20,7 @@
 #include "270_closest_binary_search_tree_value_tests.cpp"
 #include "489_robot_room_cleaner_tests.cpp"
 #include "227_basic_calculator_2_tests.cpp"
+#include "249_group_shifted_strings_tests.cpp"
 
 int main(int argc, char **argv)
 {
