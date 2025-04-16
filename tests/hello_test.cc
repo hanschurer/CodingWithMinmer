@@ -13,7 +13,6 @@
 #include "415_add_strings_tests.cpp"
 #include "15_3_sum_tests.cpp"
 #include "1424_diagonal_traversal_tests.cpp"
-#include "408_valid_word_abbreviation_tests.cpp"
 #include "133_clone_graph_tests.cpp"
 #include "23_merge_k_sorted_lists_tests.cpp"
 #include "987_vertical_order_traversal_of_binary_tree_tests.cpp"
@@ -22,6 +21,8 @@
 #include "227_basic_calculator_2_tests.cpp"
 #include "249_group_shifted_strings_tests.cpp"
 #include "146_lru_cache_tests.cpp"
+#include "348_design_tic_tac_toe_tests.cpp"
+#include "408_valid_word_abbreviation_tests.cpp"
 
 int main(int argc, char **argv)
 {
