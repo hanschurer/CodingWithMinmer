@@ -13,6 +13,10 @@ tests/CTestTestfile.cmake
 tests/hello_test[1]_include.cmake
 tests/CMakeCache.txt
 CMakeCache.txt
+
+pytest/*
+HTML/*
+
 build/.cmake/api/v1/query/client-vscode/query.json
 build/CMakeFiles/cmake.check_cache
 build/CMakeFiles/CMakeConfigureLog.yaml
