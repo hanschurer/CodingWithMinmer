@@ -77,4 +77,7 @@ TEST(MonotonicArray_896_Variant, Hybrid) {
 
     nums1 = {10, 9, 8, 8, 8, 8, 6, 4, 4, 4, 4, 4, 4, 1, 2, 1, 2, 2};
     EXPECT_EQ(9, countMonotonicSequences(nums1));
+
+    nums1 = {1, 2, 3, 2, 1, 1};
+    EXPECT_EQ(3, countMonotonicSequences(nums1));
 }
