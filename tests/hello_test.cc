@@ -29,6 +29,7 @@
 #include "605_can_place_flowers_tests.cpp"
 #include "896_monotonic_array_tests.cpp"
 #include "636_exclusive_time_of_functions_tests.cpp"
+#include "708_insert_into_sorted_circular_linked_list_tests.cpp"
 
 // UNKNOWNS
 #include "./unknowns/1_draw_circle_tests.cpp"
