@@ -1,7 +1,8 @@
-## Hi there 👋
+## Hi there 👋 63 个 Leetcode， 未知有四个
 
 I’m currently working on solutions to actual variants that Meta asks in their interviews.
 Check it out (or not): https://www.youtube.com/@CodingWithMinmer
+
 <!--
 **CodingWithMinmer/CodingWithMinmer** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

@@ -3,25 +3,26 @@ class TreeNode:
         self.val = val
         self.children = children
 
+
+
+        
+# 这个解法的巧妙之处在于它利用了递归的"自底向上"特性，一旦在某个节点发现两个目标节点分别在不同的子树中，该节点就是LCA。
 class Solution:
     def lowestCommonAncestor(self, root: "TreeNode", p: "TreeNode", q: "TreeNode") -> "TreeNode":
-        parent = {root: None}
-        stack = [root]
-        while p not in parent or q not in parent:
-            node = stack.pop()
-            for child in node.children:
-                parent[child] = node
-                stack.append(child)
+        if root in [p, q, None]:
+            return root
+        res = []
+        for child in root.children:
+            ancestor = self.lowestCommonAncestor(child, p, q)
+            if ancestor:
+                res.append(ancestor)
+        if len(res) == 0:
+            return None
+        elif len(res) == 1:
+            return res[0]
+        else:
+            return root
 
-        ancestors = set()
-        while p:
-            ancestors.add(p)
-            p = parent[p]
-
-        while q not in ancestors:
-            q = parent[q]
-
-        return q
 
 
 if __name__ == "__main__":

@@ -4,21 +4,20 @@ class Solution:
         if len(nums) == 0:
             return 0
 
-        def upper(arr, target):
+        def lower_bound(arr, target):
             left, right = 0, len(arr) - 1
             while left <= right:
                 mid = (left + right) // 2
-                if arr[mid] <= target:
+                if arr[mid] < target:
                     left = mid + 1
                 else:
                     right = mid - 1
-            return right
+            return left
 
         start = 0
         count = 0
         while start < len(nums):
-            end = upper(nums, nums[start])
-            start = end + 1
+            start = lower_bound(nums, nums[start]+1)
             count += 1
 
         return count

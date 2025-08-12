@@ -6,26 +6,16 @@ class Solution:
         if cd[0] == '/':
             cwd = ''
         
-        tokens = []
-        for token in cwd.split('/'):
-            if token:
-                tokens.append(token)
-        
+        stack = [ path for path in cwd.split("/") if path]
+
         for token in cd.split('/'):
-            if not token:
-                continue
-            if token == '.':
-                continue
-            elif token == '..':
-                if tokens:
-                    tokens.pop()
-            else:
-                tokens.append(token)
+            if token == "..":
+                if stack:
+                    stack.pop()
+            elif token and token != '.':
+                stack.append(token)
         
-        if not tokens:
-            return '/'
-        
-        return '/' + '/'.join(tokens)
+        return '/' + '/'.join(stack)
 
 if __name__ == "__main__":
     solution = Solution()

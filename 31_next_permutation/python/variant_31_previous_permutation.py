@@ -1,29 +1,30 @@
+
+#find previous permutation
+
 class Solution:
     def previousPermutation(self, nums: list[int]) -> None:
-        peak = None
-        for i in range(len(nums) - 1, 0, -1):
-            if nums[i - 1] > nums[i]:
-                peak = i - 1
-                break
-
-        if peak is None:
-            nums.reverse()
-            return
-
-        next_lower = len(nums) - 1
-        while nums[next_lower] >= nums[peak]:
-            next_lower -= 1
-
-        nums[peak], nums[next_lower] = nums[next_lower], nums[peak]
-
-        left = peak + 1
-        right = len(nums) - 1
-
-        while left < right:
-            nums[left], nums[right] = nums[right], nums[left]
-            left += 1
-            right -= 1
-
+        n = len(nums)
+        def findNextBig():
+            for i in range(n-2, -1, -1):
+                if nums[i] > nums[i+1]:
+                    return i
+            return -1
+        def findJustSmall(i):
+            for j in range(n-1, i, -1):
+                if nums[j] < nums[i]:
+                    return j
+            return i
+        def reverse(l, r):
+            while l<r:
+                nums[l], nums[r] = nums[r], nums[l]
+                l+=1
+                r-=1
+        i = findNextBig()
+        if i != -1:
+            j = findJustSmall(i)
+            nums[i], nums[j] = nums[j], nums[i]
+        reverse(i+1, n-1)
+        return nums
 
 if __name__ == "__main__":
     # Basic cases

@@ -3,6 +3,7 @@ class Solution:
         result = []
         extra_opens = 0
         for c in s:
+            
             if c == '(':
                 extra_opens += 1
             elif c == ')':

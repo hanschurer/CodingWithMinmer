@@ -1,27 +1,38 @@
 from typing import List
-
+#merge 3 sorted Lists without duplicate
 def merge_3_sorted_lists_second_variant_21(listA: List[int], 
                                            listB: List[int], 
                                            listC: List[int]) -> List[int]:
+    """
+    Merge 3 sorted lists without duplicates.
+    Returns a sorted list with unique elements from all three input lists.
+    """
     result = []
-    a, b, c = 0, 0, 0
+    a = b = c = 0
+    last_added = None  # Track the last added value to avoid duplicates
+    
     while a < len(listA) or b < len(listB) or c < len(listC):
+        # Get current values from each list, use inf as sentinel
         a_val = listA[a] if a < len(listA) else float('inf')
         b_val = listB[b] if b < len(listB) else float('inf')
         c_val = listC[c] if c < len(listC) else float('inf')
-
+        
+        # Find minimum value
         min_val = min(a_val, b_val, c_val)
-
-        if not result or result[-1] != min_val:
+        
+        # Add to result only if it's different from last added value
+        if last_added != min_val:
             result.append(min_val)
-
+            last_added = min_val
+        
+        # Advance pointer for the list that contributed the minimum value
         if a_val == min_val:
             a += 1
         elif b_val == min_val:
             b += 1
-        else:
+        else:  # c_val == min_val
             c += 1
-
+    
     return result
 
 if __name__ == '__main__':

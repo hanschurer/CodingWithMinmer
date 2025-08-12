@@ -1,5 +1,6 @@
 from typing import List
 
+# merge 3 sorted lists
 def merge_3_sorted_lists_first_variant_21_python(listA: List[int], 
                                                  listB: List[int], 
                                                  listC: List[int]) -> List[int]:

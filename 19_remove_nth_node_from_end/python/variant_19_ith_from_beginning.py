@@ -1,5 +1,8 @@
 from utils.ListNode import ListNode
 
+
+#remove nth node from beginning of the LinkedList
+
 class Solution_19_Variant:
     def removeIthFromBeginning(self, head, n):
         dummy = ListNode()

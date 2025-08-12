@@ -8,39 +8,36 @@ class Solution:
         max_len = max(len(decimals1), len(decimals2))
         decimals1 = decimals1.ljust(max_len, '0')
         decimals2 = decimals2.ljust(max_len, '0')
-
-        carry = [0]
+        carry = 0
         result = []
         
-        def add_strings_415(num1: str, num2: str, carry: list) -> str:
-            n1 = len(num1) - 1
-            n2 = len(num2) - 1
+        def add_strings_415(num1: str, num2: str) -> str:
+            i = len(num1) - 1
+            j = len(num2) - 1
+            nonlocal carry
             result = []
-            while n1 >= 0 or n2 >= 0:
-                sum = 0
-                if n1 >= 0:
-                    sum += int(num1[n1])
-                    n1 -= 1
-                if n2 >= 0:
-                    sum += int(num2[n2])
-                    n2 -= 1
-                sum += carry[0]
-
-                result.append(str(sum % 10))
-                carry[0] = sum // 10
+            while i >= 0 or j >= 0:
+                n1 = num1[i] if i>=0 else 0
+                n2 = num2[j] if j>=0 else 0
+                temp = int(n1) + int(n2) + carry
+               
+                carry = temp // 10
+                result.append(str(temp % 10))
+                i-=1
+                j-=1
             
             return ''.join(result)
 
-        result.append(add_strings_415(decimals1, decimals2, carry))
+        result.append(add_strings_415(decimals1, decimals2))
 
         if decimals1 or decimals2:
             result.append('.')
         
-        result.append(add_strings_415(nums1[0], nums2[0], carry))
-        if carry[0]:
-            print(carry)
-            result.append(str(carry[0]))
-        return "".join(result)[::-1]
+        result.append(add_strings_415(nums1[0], nums2[0]))
+
+        res = "".join(result)[::-1]
+
+        return "1" + res  if carry else res
 
 
 if __name__ == "__main__":

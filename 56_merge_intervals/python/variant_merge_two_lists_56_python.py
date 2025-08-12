@@ -1,6 +1,6 @@
 from typing import List
 
-def try_merge(result: List[List[int]], curr_interval: List[int]):
+def try_merge(curr_interval: List[int]):
     if not result or curr_interval[0] > result[-1][1]:
         result.append(curr_interval)
     else:
@@ -17,16 +17,11 @@ def merge_2_interval_lists_56_variant_python(A: List[List[int]], B: List[List[in
             curr_interval = B[j]
             j += 1
 
-        try_merge(result, curr_interval)
+        try_merge(curr_interval)
 
-    if i < len(A):
-        while i < len(A):
-            try_merge(result, A[i])
-            i += 1
-    else:
-        while j < len(B):
-            try_merge(result, B[j])
-            j += 1
+    remaining = A[i:]+B[j:]
+    for cur in remaining:
+         try_merge(cur)
 
     return result
 

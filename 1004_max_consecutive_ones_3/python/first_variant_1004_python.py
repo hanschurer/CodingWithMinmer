@@ -1,15 +1,15 @@
 from typing import List
 
 def longestOnes_first_variant_1004_python(days: List[str], pto: int) -> int:
-    max_vacation = 0
+    hashmap = {"W":0, "H":1}
+    max_vacation = 0  
     left = 0
+    count0 = 0
     for right in range(len(days)):
-        if days[right] == 'W':
-            pto -= 1
+        count0 += 1 - hashmap.get(days[right])
 
-        while pto < 0:
-            if days[left] == 'W':
-                pto += 1
+        while count0 > pto:
+            count0 -= 1 - hashmap.get( days[left])
             left += 1
 
         max_vacation = max(max_vacation, right - left + 1)
