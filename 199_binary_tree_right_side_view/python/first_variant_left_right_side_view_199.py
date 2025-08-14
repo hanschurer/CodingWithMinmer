@@ -1,6 +1,7 @@
 from typing import Optional
 from collections import deque
 
+#你和你的朋友站在一个树的左右，返回你们都可以看到的节点
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -22,7 +23,7 @@ class Solution:
 
                 if i == 0:
                     left_side.append(node.val)
-                if size == i + 1:
+                if i == size -1:
                     right_side.append(node.val)
 
                 if node.left:
@@ -30,9 +31,7 @@ class Solution:
                 if node.right:
                     q.append(node.right)
 
-        result = []
-        result.extend(reversed(left_side))
-        result.extend(right_side[1:])
+        result = left_side[::-1]+right_side[1:]
         return result
 
 

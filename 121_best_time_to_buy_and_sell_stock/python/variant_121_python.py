@@ -1,13 +1,16 @@
+# You are given two arrays departures and returns where departures [i] and returns [i] are ticket prices for departing and returning flights on the ith day, respectively.
+# You want to minimize your cost by choosing a single day to buy a departure flight and choosing a different day in the future to buy a returning flight.
+# Return the minimum cost you can achieve from a single round-trip flight.
+
+# 不可以直接用「出发数组的全局最小值」来计算，因为这可能违反「出发日必须早于返程日」的约束。
 def find_cheapest_tickets(departures, returns):
     min_departure_cost = departures[0]
     min_cost = float('inf')
     
     for i in range(1, len(departures)):
+        min_departure_cost = min(min_departure_cost, departures[i])
         min_cost = min(min_cost, min_departure_cost + returns[i])
-
-        if departures[i] < min_departure_cost:
-            min_departure_cost = departures[i]
-    
+ 
     return min_cost
 
 if __name__ == "__main__":

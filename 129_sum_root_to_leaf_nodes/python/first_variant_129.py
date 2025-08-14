@@ -1,5 +1,6 @@
 from typing import Optional
 
+# 数字不再是0-9 而是0-9999
 class Solution:
     class TreeNode:
         def __init__(self, val=0, left=None, right=None):
@@ -7,30 +8,15 @@ class Solution:
             self.left = left
             self.right = right
 
-    def sumNumbers(self, root: Optional[TreeNode]) -> int:
-        def getPlaces(num: int):
-            if not num:
-                return 10
-                
-            places = 1
-            while num > 0:
-                num = num // 10
-                places *= 10
-            return places
-        
-        def preorder(node: Solution.TreeNode, curr_number: int):
-            nonlocal root_to_leaf
-            if node:
-                places = getPlaces(node.val)
-                curr_number = (curr_number * places) + node.val
-                if not (node.left or node.right):
-                    root_to_leaf += curr_number
-                preorder(node.left, curr_number)
-                preorder(node.right, curr_number)
+    def sumNumbers(self, root: Optional[TreeNode], x=0) -> int:
 
-        root_to_leaf = 0
-        preorder(root, 0)
-        return root_to_leaf
+        if not root: return 0
+        x = x*10**len(str(root.val))+root.val
+        if root.left is root.right:
+            return x 
+
+
+        return self.sumNumbers(root.left, x) + self.sumNumbers(root.right, x)
 
 
 if __name__ == "__main__":

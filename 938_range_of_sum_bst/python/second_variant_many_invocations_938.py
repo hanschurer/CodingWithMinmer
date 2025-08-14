@@ -2,7 +2,7 @@ from typing import Optional
 from itertools import accumulate
 from bisect import bisect_left
 
-
+#如果这个函数会被call 100000 times， 怎么提升算法效率 答： inorder 的过程中构建前缀和， 然后二分找上下
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val

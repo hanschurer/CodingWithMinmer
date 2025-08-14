@@ -1,22 +1,26 @@
 class Solution:
     def findMissingRangesVariant(self, nums, lower, upper):
-        curr_lower = lower
-        missing_ranges = []
-        nums.append(upper + 1)
+        nums = [lower - 1] + nums + [upper + 1]
+        prev = nums[0]
+        res = []
         
-        for num in nums:
-            if num - curr_lower > 2:
-                missing_ranges.append(f"{curr_lower}-{num - 1}")
-            elif num - curr_lower == 2:
-                missing_ranges.append(str(curr_lower))
-                missing_ranges.append(str(curr_lower + 1))
-            elif num - curr_lower == 1:
-                missing_ranges.append(str(curr_lower))
+        for cur in nums[1:]:
+            # 计算缺失数字的数量：cur - prev - 1（prev和cur之间的数字个数）
+            missing_count = cur - prev - 1
             
-            curr_lower = num + 1
-        
-        return missing_ranges
-
+            if missing_count > 2:
+                # 缺失>2个：用区间表示
+                res.append(f"{prev + 1}-{cur - 1}")
+            elif missing_count == 2:
+                # 缺失正好2个：分别添加两个数字
+                res.append(str(prev + 1))
+                res.append(str(prev + 2))
+            elif missing_count == 1:
+                # 缺失1个：添加单个数字
+                res.append(str(prev + 1))
+            
+            prev = cur
+        return res
 
 if __name__ == "__main__":
     solution = Solution()

@@ -18,15 +18,15 @@ def dfs_133_variant(node: Node, old_to_new: Dict[Node, Node]) -> Node:
         return old_to_new[node]
     
     # 创建新节点
-    old_to_new[node] = Node(node.val)
+    copy = old_to_new[node] = Node(node.val)
     
     # 递归克隆所有邻居
     for neighbor in node.neighbors:
-        old_to_new[node].neighbors.append(
+        copy.neighbors.append(
             dfs_133_variant(neighbor, old_to_new)
         )
     
-    return old_to_new[node]
+    return copy
 
 def clone_graph_133_first_variant(input_graph: Graph) -> Graph:
     """

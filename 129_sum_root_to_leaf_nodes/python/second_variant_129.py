@@ -4,27 +4,26 @@ class Solution:
             self.val = val
             self.left = left
             self.right = right
-
+            
     def sumNumbers(self, root: TreeNode) -> int:
-        def helper(node, curr_sum, num_negatives):
-            if node is None:
+        def dfs(node, current_num, negative_count):
+            if not node:
                 return 0
-
-            curr_sum = (curr_sum * 10) + abs(node.val)
-            if node.val < 0:
-                num_negatives += 1
-
-            if node.left is None and node.right is None:
-                sign = -1 if num_negatives % 2 == 1 else 1
-                return curr_sum * sign
-
-            left_sum = helper(node.left, curr_sum, num_negatives)
-            right_sum = helper(node.right, curr_sum, num_negatives)
-
-            return left_sum + right_sum
-
-        return helper(root, 0, 0)
-
+            
+            # 累加当前节点的负数计数（不使用全局变量，而是通过参数传递）
+            new_neg_count = negative_count + (1 if node.val < 0 else 0)
+            # 拼接当前数字
+            new_num = current_num * 10 + abs(node.val)
+            
+            # 叶子节点：计算符号并返回
+            if not node.left and not node.right:
+                sign = -1 if new_neg_count % 2 == 1 else 1
+                return new_num * sign
+            
+            # 非叶子节点：递归左右子树（传递新的计数，自然实现回溯）
+            return dfs(node.left, new_num, new_neg_count) + dfs(node.right, new_num, new_neg_count)
+        
+        return dfs(root, 0, 0)
 
 if __name__ == "__main__":
     solution = Solution()

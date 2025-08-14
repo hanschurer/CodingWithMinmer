@@ -2,11 +2,13 @@ class Solution:
     def isPalindrome(self, s: str, include: list[str]) -> bool:
         include_set = set(include)
         left, right = 0, len(s) - 1
-        while left < right:
-            while s[left] not in include_set and left < right:
+        while left <= right:
+            if s[left] not in include_set:
                 left += 1
-            while s[right] not in include_set and left < right:
+                continue
+            if s[right] not in include_set:
                 right -= 1
+                continue
             if s[left] != s[right]:
                 return False
             left += 1

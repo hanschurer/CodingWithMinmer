@@ -1,5 +1,5 @@
 from typing import Optional
-
+#求average of bst
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -8,19 +8,22 @@ class TreeNode:
 
 class Solution:
     def rangeAverageBST(self, root: Optional[TreeNode], low: int, high: int) -> float:
-        result = 0
         count = 0
-        stack = [root]
-        while stack:
-            curr = stack.pop()
-            if low <= curr.val <= high:
-                result += curr.val
-                count += 1
-            if curr.right and curr.val < high:
-                stack.append(curr.right)
-            if curr.left and curr.val > low:
-                stack.append(curr.left)
-        return result / count
+
+        def dfs(root):
+            nonlocal count
+            if not root: return 0
+            x = root.val
+            if x > high:
+                return dfs(root.left)
+            elif x < low:
+                return dfs(root.right)
+            else:
+                count +=1
+
+            return x+dfs(root.left)+dfs(root.right)
+        
+        return dfs(root) / count
 
 if __name__ == "__main__":
     solution = Solution()

@@ -1,21 +1,20 @@
 class Solution:
     def changeDirectory(self, cwd: str, cd: str) -> str:
-        if not cd:
+        if cd == "":
             return cwd
+        if cd[0] == "/":
+            cwd = ""
         
-        if cd[0] == '/':
-            cwd = ''
-        
-        stack = [ path for path in cwd.split("/") if path]
-
-        for token in cd.split('/'):
-            if token == "..":
+        stack = [p for p in cwd.split("/") if p]
+        for p in cd.split("/"):
+            if p == "..":
                 if stack:
                     stack.pop()
-            elif token and token != '.':
-                stack.append(token)
-        
-        return '/' + '/'.join(stack)
+            elif p and p != ".":
+                stack.append(p)
+        return "/"+"/".join(stack)
+
+
 
 if __name__ == "__main__":
     solution = Solution()

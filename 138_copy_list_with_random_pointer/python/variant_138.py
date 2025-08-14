@@ -15,19 +15,18 @@ class NodeCopy:
         self.random = random
 
 class Solution:
-    def copyRandomBinaryTree(self, root: "Optional[Node]") -> "Optional[NodeCopy]":
-        visited = {}
+    def copyRandomBinaryTree(self, root: 'Optional[Node]') -> 'Optional[NodeCopy]':
+        dic = {}
+        def dfs(root):
+            if not root: return None
+            if root in dic:
+                return dic[root]
 
-        def dfs(root) -> "Optional[NodeCopy]":
-            if root is None:
-                return None
-            if root in visited:
-                return visited[root]
-            copy = NodeCopy(root.val)
-            visited[root] = copy
+            copy = dic[root] = NodeCopy(root.val)
             copy.left = dfs(root.left)
             copy.right = dfs(root.right)
             copy.random = dfs(root.random)
             return copy
-
         return dfs(root)
+
+        

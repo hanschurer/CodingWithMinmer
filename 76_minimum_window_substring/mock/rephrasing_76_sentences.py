@@ -2,7 +2,7 @@ from typing import List
 from collections import Counter, defaultdict
 
 class Solution:
-    def findSmallestSubstring(self, s, w):
+    def findSmallestSubstring(self, s: List[str], w: List[str]) -> str:
         target_freq = Counter(w)
         curr_freq = defaultdict(int)
         need_matches = len(target_freq)

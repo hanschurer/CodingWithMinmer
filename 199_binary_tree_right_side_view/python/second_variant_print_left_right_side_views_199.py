@@ -1,6 +1,6 @@
 from typing import Optional
 from collections import deque
-
+#打印所有的res
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
