@@ -1,17 +1,14 @@
+# 能优化frqmap吗 用 list代替 
 class Solution:
     def customSortString(self, order: str, s: str) -> str:
-        freq = [0 for _ in range(26)]
-
-        def get_index(char: str):
-            """Returns index in freq"""
-            return ord(char) - ord("a")
+        freq = [0]*26
 
         for char in s:
-            freq[get_index(char)] += 1
+            freq[ord(char) - ord("a")] += 1
 
         result = []
         for char in order:
-            i = get_index(char)
+            i = freq[char]
             if freq[i] > 0:
                 result.extend([char] * freq[i])
                 freq[i] = 0

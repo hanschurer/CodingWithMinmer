@@ -1,6 +1,6 @@
 from heapq import heappush, heappop
 
-
+# 找Kth 小的，用最大堆 入negative num
 class Solution:
     def findKthSmallest(self, nums: list[int], k: int) -> int:
         max_heap = []

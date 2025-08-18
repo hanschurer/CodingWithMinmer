@@ -1,14 +1,18 @@
 from typing import List
-        
+
+#give a 1D arrary        
 class SolutionVariant:
     def hasSameDiagonalValues(self, list: List[int], rows: int, cols: int) -> bool:
         for i in range(len(list)):
-            cr = i // cols
-            cc = i % cols
+            cr = i // cols  # 当前元素的行索引（二维映射）
+            cc = i % cols   # 当前元素的列索引（二维映射）
+            
+            # 跳过最后一行或最后一列的元素（它们没有右下方元素）
             if cr == rows - 1 or cc == cols - 1:
                 continue
-
-            if list[i] != list[i + (cols + 1)]:
+            
+            # 检查当前元素与其右下方对角线元素是否相等
+            if list[i] != list[i + cols + 1]:
                 return False
 
         return True

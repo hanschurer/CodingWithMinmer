@@ -1,22 +1,22 @@
+
+
 class Solution:
     def minimumAddToMakeValid(self, s: str) -> str:
-        result = []
-        extra_opens = 0
+        res = []
+        l = 0
         for c in s:
-            
-            if c == '(':
-                extra_opens += 1
-            elif c == ')':
-                if extra_opens == 0:
-                    result.append("(")
+            if c == "(":
+                l +=1
+            elif c == ")":
+                if l > 0:
+                    l-=1
                 else:
-                    extra_opens -= 1
-            result.append(c)
-
+                    res.append("(")
+            res.append(c)
         
-        result += [')'] * extra_opens
-        return "".join(result)
-    
+        res += [")"] * l
+        return "".join(res)
+                
 if __name__ == "__main__":
     solution = Solution()
     assert solution.minimumAddToMakeValid("(())((") == "(())(())"

@@ -1,3 +1,4 @@
+#变种是order给的是list
 class Solution:
     def customSortString(self, order: list[str], s: str) -> str:
         freqs = [0] * 26

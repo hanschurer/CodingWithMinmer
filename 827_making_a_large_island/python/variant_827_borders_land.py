@@ -1,5 +1,5 @@
 from typing import List
-
+# can change as many 0's to 1 as long as they do not touch other island
 class Solution827:
     def __init__(self):
         self.directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]

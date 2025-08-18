@@ -26,27 +26,10 @@ class Solution:
             self.prefix_sums.append(self.prefix_sums[-1] + root.val)
         self.inorder(root.right)
     
-    def find_right_boundary(self, left, right, upper):
-        while left <= right:
-            mid = (right - left) // 2 + left
-            if self.vals[mid] <= upper:
-                left = mid + 1
-            else:
-                right = mid - 1
-        return right
-    
-    def find_left_boundary(self, left, right, lower):
-        while left <= right:
-            mid = (right - left) // 2 + left
-            if self.vals[mid] >= lower:
-                right = mid - 1
-            else:
-                left = mid + 1
-        return left
     
     def calculate(self, lower, upper):
-        right_boundary = self.find_right_boundary(0, len(self.vals) - 1, upper)
-        left_boundary = self.find_left_boundary(0, len(self.vals) - 1, lower)
+        right_boundary = bisect_left(self.vals, lower)
+        left_boundary = bisect_left(self.vals, upper+1)-1
         
         if left_boundary == 0:
             return self.prefix_sums[right_boundary]

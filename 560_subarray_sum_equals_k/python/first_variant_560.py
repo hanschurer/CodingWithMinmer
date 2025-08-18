@@ -1,3 +1,5 @@
+
+#return True 和 False就行
 class Solution:
     def subarraySumExists(self, nums: list[int], k: int) -> bool:
         cumulative = 0

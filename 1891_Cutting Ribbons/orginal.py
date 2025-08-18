@@ -1,0 +1,24 @@
+class Solution:
+    def maxLength(self, ribbons: List[int], k: int) -> int:
+        if sum(ribbons) < k:
+            return 0
+        
+        maxx = max(ribbons)
+        def check(y, k):
+            temp = 0
+            for x in ribbons:
+                temp+=x//y
+                if temp >= k:
+                    return True
+            return False
+        
+        left, right = 1, maxx
+        while left<=right:
+            mid = (left+right) //2
+            if check(mid, k):
+                left = mid+1
+            else:
+                right = mid-1
+                
+        return left-1
+

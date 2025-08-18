@@ -1,4 +1,6 @@
 from typing import Optional
+
+
 #求average of bst
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

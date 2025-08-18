@@ -4,7 +4,7 @@ class TreeNode:
         self.children = children
 
 
-
+#LCA of 多叉树
         
 # 这个解法的巧妙之处在于它利用了递归的"自底向上"特性，一旦在某个节点发现两个目标节点分别在不同的子树中，该节点就是LCA。
 class Solution:
@@ -16,12 +16,12 @@ class Solution:
             ancestor = self.lowestCommonAncestor(child, p, q)
             if ancestor:
                 res.append(ancestor)
-        if len(res) == 0:
-            return None
+        if not res:
+            return None  # 子树中既没有p也没有q
         elif len(res) == 1:
-            return res[0]
+            return res[0]  # 只有一个子树包含p或q，返回该子树的结果
         else:
-            return root
+            return root  # 多个子树包含p或q，说明当前root是LCA
 
 
 

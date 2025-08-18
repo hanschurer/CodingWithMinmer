@@ -1,5 +1,5 @@
 from heapq import heappush, heappop
-
+#如果找K+1大的元素， 先判断是否越界
 class Solution:
     def findKthPluseOneLargest(self, nums: list[int], k: int) -> int:
         if k + 1 > len(nums):

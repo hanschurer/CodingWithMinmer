@@ -1,5 +1,6 @@
 from typing import List
 
+# years=【T，F，F，T】
 def longestOnes_second_variant_1004_python(year: List[bool], pto: int) -> int:
     max_vacation = 0
     left = 0

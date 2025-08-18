@@ -1,13 +1,15 @@
+
+#only positive number
 class Solution:
     def subarraySumExistsPositiveNums(self, nums: list[int], k: int) -> bool:
-        left, right = 0, 0
+        l = 0
         window_sum = 0
-        for right in range(len(nums)):
-            window_sum += nums[right]
+        for r, n in enumerate(nums):
+            window_sum += n
 
             while window_sum > k:
-                window_sum -= nums[left]
-                left += 1
+                window_sum -= nums[l]
+                l += 1
 
             if window_sum == k:
                 return True

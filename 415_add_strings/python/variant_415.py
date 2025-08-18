@@ -1,3 +1,4 @@
+# may have decimals
 class Solution:
     def add_string_decimals_415(self, num1: str, num2: str) -> str:
         nums1 = num1.split('.')

@@ -1,3 +1,5 @@
+
+#改成是否这个树里每个节点都符合要求，符合就True 不符合False
 class SolutionVariant:
     def postorder(self, currNode):
         if currNode is None:

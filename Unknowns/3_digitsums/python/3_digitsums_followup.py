@@ -15,6 +15,7 @@ class KthSmallestDigitSumsFollowup:
 
         for index, num in enumerate(nums):
             digit_sum = self.compute(num)
+            #加入index
             heapq.heappush(max_heap, (-digit_sum, -index, num))
 
             if len(max_heap) > k:
