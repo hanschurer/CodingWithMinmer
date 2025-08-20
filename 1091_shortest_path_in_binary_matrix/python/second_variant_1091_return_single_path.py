@@ -19,57 +19,32 @@ class Solution_1091_Second_Variant:
         ]
     
     def _dfs_1091(self, grid: List[List[int]], path: List[List[int]], row: int, col: int) -> bool:
-        """
-        DFS helper function to find a path to destination.
-        
-        Args:
-            grid: Binary matrix
-            path: Current path being built
-            row: Current row position
-            col: Current column position
-            
-        Returns:
-            True if path to destination found, False otherwise
-        """
+
         # Mark current cell as visited
         grid[row][col] = 1
         path.append([row, col])
+        n = len(grid)
         
         # Check if we reached the destination
-        if row == len(grid) - 1 and col == len(grid[0]) - 1:
+        if row == n - 1 and col == n - 1:
             return True
         
         # Try all 8 directions
         for dr, dc in self.directions:
             new_row = row + dr
             new_col = col + dc
-            
-            # Check bounds
-            if new_row < 0 or new_row >= len(grid) or new_col < 0 or new_col >= len(grid[0]):
-                continue
-            
-            # Check if cell is clear and unvisited
-            if grid[new_row][new_col] == 1:
-                continue
-            
+
+            if new_row in range(n) and new_col in range(n) and grid[new_row][new_col] == 0:
             # Recursively try this direction
-            if self._dfs_1091(grid, path, new_row, new_col):
-                return True
+                self._dfs_1091(grid, path, new_row, new_col)
+                
         
         # If no direction leads to destination, backtrack
         path.pop()
         return False
     
     def pathBinaryMatrix(self, grid: List[List[int]]) -> List[List[int]]:
-        """
-        Find a path from top-left to bottom-right using DFS.
-        
-        Args:
-            grid: Binary matrix where 0 represents clear cell, 1 represents blocked cell
-            
-        Returns:
-            List of coordinates representing a valid path, or empty list if no path exists
-        """
+
         if not grid or not grid[0]:
             return []
             
@@ -77,12 +52,10 @@ class Solution_1091_Second_Variant:
         if grid[0][0] == 1 or grid[len(grid)-1][len(grid[0])-1] == 1:
             return []
         
-        # Create a copy of grid to avoid modifying the original
-        grid_copy = [row[:] for row in grid]
         path = []
         
         # Start DFS from (0, 0)
-        self._dfs_1091(grid_copy, path, 0, 0)
+        self._dfs_1091(grid.copy(), path, 0, 0)
         
         return path
 

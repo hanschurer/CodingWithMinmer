@@ -1,5 +1,5 @@
 from typing import List
-#给的是2D Matrix
+#给的是2D Matrix 做法是模拟sw in 2d matrix
 class Variant:
     def shrink_window(self, days: List[List[str]], left: List[int]) -> List[int]:
         row, col = left[0], left[1]

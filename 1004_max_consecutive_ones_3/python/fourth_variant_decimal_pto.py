@@ -15,14 +15,15 @@ class Variant:
                 left += 1
 
             extension = 0.0
-            #尝试用「小数 PTO」扩展窗口：
+            # 尝试用「小数 PTO」扩展窗口：
             # 若窗口左边界左侧（left-1）是工作日，说明可以用小数 PTO 覆盖部分该工作日，将窗口向左扩展 partial_pto 天。
             # 若窗口右边界右侧（right+1）是工作日，说明可以用小数 PTO 覆盖部分该工作日，将窗口向右扩展 partial_pto 天。
             # 满足任一条件，就可以获得 partial_pto 天的扩展长度。
-            if left > 0 and days[left - 1] == 'W' or \
-               right < len(days) - 1 and days[right + 1] == 'W':
-               extension = partial_pto
+            # if left > 0 and days[left - 1] == 'W' or right < len(days) - 1 and days[right + 1] == 'W':
+            #    extension = partial_pto
 
-            max_vacation = max(max_vacation, right - left + 1 + extension)
-
+            max_vacation = max(max_vacation, right - left + 1 )
+            
+            if max_vacation < len(days):
+                max_vacation = max_vacation  + partial_pto
         return max_vacation

@@ -1,22 +1,20 @@
 class Solution(object):
     def isNumber(self, s: str):
-        seen_digit, seen_dot = [False, False]
-        for i in range(len(s)):
-            if s[i].isdigit():
+        seen_digit = seen_dot = False
+        for i, c in enumerate(s):
+            if c.isdigit():
                 seen_digit = True
-            elif s[i] in {"+", "-"}:
+            elif c in "+-":
                 if i != 0:
                     return False
-            elif s[i] == ".":
+            elif c == '.':
                 if seen_dot:
                     return False
                 seen_dot = True
             else:
                 return False
-
-        if not seen_digit:
-            return False
-        return True
+        
+        return seen_digit
 
 
 if __name__ == "__main__":

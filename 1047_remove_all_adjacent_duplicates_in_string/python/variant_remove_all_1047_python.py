@@ -1,28 +1,23 @@
 #删除所有duplicate ex：如果有三个b 那就全部要删除 但是原题解法会遗漏第三个
 
 def remove_all_adjacent_duplicates_variant_1047_python(s):
-    stack = []  # 栈元素: (字符, 连续出现次数)
-    for ch in s:
-        if stack and stack[-1][0] == ch:
-            # 与栈顶字符相同，累加计数
-            stack[-1] = (ch, stack[-1][1] + 1)
+    stack = []
+
+    for c in s:
+        if stack and stack[-1][0]  == c:
+            stack[-1][1] +=1
         else:
-            # 处理上一个字符（若连续次数>1则移除）
-            if stack and stack[-1][1] > 1:
+            while stack and stack[-1][1] > 1:
                 stack.pop()
-            # 检查新栈顶是否与当前字符相同（可能因上一步弹出而变化）
-            if stack and stack[-1][0] == ch:
-                stack[-1] = (ch, stack[-1][1] + 1)
+            if stack and stack[-1][0] == c:
+                stack[-1][1] +=1
             else:
-                stack.append((ch, 1))
-    
-    # 移除最后一个可能需要清理的字符
-    if stack and stack[-1][1] > 1:
+                stack.append([c,1])
+    #只有遇到不同的元素时才会pop 所以需要手动最后检查下 例子aabbccdd
+    while stack and stack[-1][1]>1:
         stack.pop()
     
-    # 拼接结果
-    return ''.join([char for char, _ in stack])
-
+    return "".join(c for c, _ in stack)
 
 if __name__ == '__main__':
     s = "azxxxzy"

@@ -1,59 +1,27 @@
 def delete_least_parentheses(s: str) -> str:
-    """
-    LeetCode 1249 Mock Interview Variant: Handle multiple types of parentheses
+    s = list(s)  # 转为列表以支持原地修改
+    stack = []    # 仍需栈存储左括号信息，空间复杂度 O(k)，k 为有效左括号数
     
-    This variant handles different types of parentheses: (), [], {}
-    Each type is balanced independently of the others.
+    # 第一次遍历：标记无效的右括号
+    for i in range(len(s)):
+        if s[i] in '([{':
+            stack.append((s[i], i))
+        elif s[i] in ')]}':
+            mapping = {')': '(', ']': '[', '}': '{'}
+            expected = mapping[s[i]]
+            if stack and stack[-1][0] == expected:
+                stack.pop()  # 匹配成功，保留
+            else:
+                s[i] = ''   # 标记无效右括号为待删除
     
-    Args:
-        s: Input string containing various types of parentheses and alphanumeric characters
-        
-    Returns:
-        String with minimum parentheses removed to make all types valid
-    """
-    # Mapping of closing to opening parentheses
-    mapping = {
-        ')': '(',
-        ']': '[',
-        '}': '{'
-    }
+    # 标记栈中剩余的无效左括号
+    while stack:
+        s[stack.pop()[1]] = ''
     
-    # Track extra opening parentheses for each type
-    extra_opens = {'(': 0, '[': 0, '{': 0}
-    total_opens = {'(': 0, '[': 0, '{': 0}
-    temp = []
-    
-    # First pass: handle closing parentheses
-    for ch in s:
-        if ch in mapping:  # Closing parentheses
-            if extra_opens[mapping[ch]] == 0:
-                continue  # Skip unmatched closing parenthesis
-            extra_opens[mapping[ch]] -= 1
-            temp.append(ch)
-        elif ch.isalnum():  # Alphanumeric characters
-            temp.append(ch)
-        else:  # Opening parentheses
-            extra_opens[ch] += 1
-            total_opens[ch] += 1
-            temp.append(ch)
-    
-    # Calculate how many of each opening parenthesis to keep
-    keep = {}
-    for open_paren in total_opens:
-        keep[open_paren] = total_opens[open_paren] - extra_opens[open_paren]
-    
-    # Second pass: build result with balanced opening parentheses
-    result = []
-    for ch in temp:
-        if ch in total_opens:  # Opening parentheses
-            if keep[ch] == 0:
-                continue  # Skip excess opening parentheses
-            keep[ch] -= 1
-            result.append(ch)
-        else:
-            result.append(ch)
-    
-    return ''.join(result)
+    # 拼接结果（过滤空字符）
+    return ''.join(s)
+
+
 
 
 # Example usage and test

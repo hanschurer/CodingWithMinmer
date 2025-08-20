@@ -11,7 +11,7 @@ class Solution:
             return -1
         def findJustSmall(i):
             for j in range(n-1, i, -1):
-                if nums[j] < nums[i]:
+                if nums[i] > nums[j]:
                     return j
             return i
         def reverse(l, r):

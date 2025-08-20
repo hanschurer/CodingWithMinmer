@@ -7,7 +7,7 @@ def find_cheapest_tickets(departures, returns):
     min_departure_cost = departures[0]
     min_cost = float('inf')
     
-    for i in range(1, len(departures)):
+    for i in range(1, len(returns)):
         min_departure_cost = min(min_departure_cost, departures[i])
         min_cost = min(min_cost, min_departure_cost + returns[i])
  

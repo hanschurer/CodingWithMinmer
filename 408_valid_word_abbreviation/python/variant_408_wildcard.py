@@ -7,81 +7,80 @@ class Solution_408_Variant:
     2. 数字表示跳过的字符数量
     3. 使用递归方法处理复杂的模式匹配
     """
-    
-    def _recurse(self, word: str, abbr: str, w: int, a: int) -> bool:
-        """
-        递归辅助函数，处理通配符匹配
-        
-        Args:
-            word: 原单词
-            abbr: 缩写
-            w: 当前在单词中的位置
-            a: 当前在缩写中的位置
-            
-        Returns:
-            bool: 是否匹配
-        """
-        # 基本情况：都到达末尾
-        if w == len(word) and a == len(abbr):
-            return True
-        
-        # 单词结束但缩写还有剩余，检查剩余部分是否都是'*'
-        if w == len(word) and a < len(abbr):
-            for i in range(a, len(abbr)):
-                if abbr[i] != '*':
-                    return False
-            return True
-        
-        # 缩写结束但单词还有剩余
-        if w < len(word) and a == len(abbr):
-            return False
-        
-        # 处理数字（跳过字符）
-        if abbr[a].isdigit():
-            skip = 0
-            while a < len(abbr) and abbr[a].isdigit():
-                skip = skip * 10 + (ord(abbr[a]) - ord('0'))
-                a += 1
-            
-            w += skip
-            if w > len(word):
+    #backtracking
+
+    # TC: 2的k次方 k是*的数量 因为每次我们都有选或不选
+    # SC: W+A
+    def validWordAbbreviation(self, word: str, abbr: str) -> bool:
+        def dfs( w: int, a: int) -> bool:
+            # 基本情况：都到达末尾
+            if w == len(word) and a == len(abbr):
+                return True
+            # 缩写结束但单词还有剩余
+            if w < len(word) and a == len(abbr):
                 return False
             
-            return self._recurse(word, abbr, w, a)
+            # 单词结束但缩写还有剩余，检查剩余部分是否都是'*'
+            if w == len(word) and a < len(abbr):
+                for i in range(a, len(abbr)):
+                    if abbr[i] != '*':
+                        return False
+                return True
+            
+
+            # 处理数字（跳过字符）
+            if abbr[a].isdigit():
+                num = 0
+                while a < len(abbr) and abbr[a].isdigit():
+                    num = num * 10 + int(abbr[a])
+                    #指针右移一位
+                    a += 1
+                
+                w += num
+                if w > len(word):
+                    return False
+                
+                return dfs(w, a)
+            
+            # 处理通配符'*'
+            if abbr[a] == '*':
+                # '*'可以匹配0个字符（跳过）或1个字符（匹配）
+                return (dfs( w, a + 1) or dfs( w + 1, a))     # 匹配一个字符
+            
+            # 处理普通字符匹配
+            if word[w] == abbr[a]:
+                return dfs(w + 1, a + 1)
+            
+            return False
+
+        return dfs(0, 0)
+
+
+#究极简化版本
+# def validWordAbbreviation(self, word: str, abbr: str) -> bool:
+#     def dfs(w: int, a: int) -> bool:
+#         # 边界条件检查
+#         if a == len(abbr):
+#             return w == len(word)
+#         if w == len(word):
+#             return all(abbr[i] == '*' for i in range(a, len(abbr)))
         
-        # 处理通配符'*'
-        if abbr[a] == '*':
-            # '*'可以匹配0个字符（跳过）或1个字符（匹配）
-            return (self._recurse(word, abbr, w, a + 1) or  # 跳过'*'
-                    self._recurse(word, abbr, w + 1, a))     # 匹配一个字符
+#         # 处理数字
+#         if abbr[a].isdigit():
+#             num = 0
+#             while a < len(abbr) and abbr[a].isdigit():
+#                 num = num * 10 + int(abbr[a])
+#                 a += 1
+#             return w + num <= len(word) and dfs(w + num, a)
         
-        # 处理普通字符匹配
-        if word[w] == abbr[a]:
-            return self._recurse(word, abbr, w + 1, a + 1)
+#         # 处理通配符
+#         if abbr[a] == '*':
+#             return dfs(w, a + 1) or dfs(w + 1, a)
         
-        return False
+#         # 处理普通字符
+#         return word[w] == abbr[a] and dfs(w + 1, a + 1)
     
-    def validWordAbbreviation(self, word: str, abbr: str) -> bool:
-        """
-        验证支持通配符的单词缩写是否有效
-        
-        Args:
-            word: 原单词
-            abbr: 缩写（可能包含'*'）
-            
-        Returns:
-            bool: 缩写是否有效
-            
-        Examples:
-            >>> solution = Solution_408_Variant()
-            >>> solution.validWordAbbreviation("hello", "h*lo")
-            True
-            >>> solution.validWordAbbreviation("hello", "h*o")
-            True
-        """
-        return self._recurse(word, abbr, 0, 0)
-
-
+#     return dfs(0, 0)
 # 测试代码
 def test_wildcard_abbreviation():
     solution = Solution_408_Variant()
